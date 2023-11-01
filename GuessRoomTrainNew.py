@@ -58,7 +58,12 @@ def guess_room_train():
             task.agentB.eval()
             accum_pred = np.concatenate(accum_pred, axis=0)
             accum_tgt = np.concatenate(accum_tgt, axis=0)
-            print("epoch{}: \nacc = {}, loss A = {}, loss B = {}".format(i, np.mean(accum_tgt == accum_pred), total_loss_A, total_loss_B))
+            
+            acc_train=np.mean(accum_tgt == accum_pred)
+            with open("guessRoom_acctrain_singleturn.txt",'a') as fp:
+                fp.write(str(acc_train)+'\n')
+            print("epoch{}: \nacc = {}, loss A = {}, loss B = {}".format(i, acc_train, total_loss_A, total_loss_B)) 
+            #print("epoch{}: \nacc = {}, loss A = {}, loss B = {}".format(i, np.mean(accum_tgt == accum_pred), total_loss_A, total_loss_B))           
             accum_pred = []; accum_tgt = []
             guess_room_evaluate(task)
 
@@ -86,7 +91,7 @@ def guess_room_evaluate(model):
         tgt = np.concatenate(tgt, axis=0)
         pred = np.concatenate(pred, axis=0)
         acc_eval=np.mean(tgt == pred)
-        with open("guessRoom_acc_40000.txt",'a') as f:
+        with open("guessRoom_acc_singleturn.txt",'a') as f:
             f.write(str(acc_eval)+'\n')
         print("eval acc = {}".format(acc_eval))
 

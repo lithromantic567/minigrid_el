@@ -17,8 +17,11 @@ def plotfig(fp):
         data=f.read().strip().split()
         y.extend([float(i) for i in data])
     plt.plot(x,y)
+    plt.xlabel("Epoch")
+    plt.ylabel("Accuracy")
+    plt.title("TRAIN")
     plt.show()
-    plt.savefig("guessroom_40000.png")
+    plt.savefig("guessroom_acctrain_singleturn.png")
 
 if __name__ == "__main__":
-    plotfig("guessRoom_acc_40000.txt")
+    plotfig("guessRoom_acctrain_singleturn.txt")

@@ -20,7 +20,7 @@ from minigrid.envs.babyai.core.verifier import GoToInstr, ObjDesc
 
 from minigrid.wrappers import DictObservationSpaceWrapper, FullyObsWrapper
 
-from el.try.localization import MinigridFeaturesExtractor
+from localization import MinigridFeaturesExtractor
 from minigrid.wrappers import ImgObsWrapper
 from stable_baselines3 import PPO
 
@@ -199,12 +199,12 @@ def main():
     env = GoTo(render_mode="human")
     env._gen_grid(env.width,env.height)
     env_obs =FullyObsWrapper(env)
-    for i in range(100):
+    for i in range(5000):
         obs,_ = env_obs.reset()  
-        output_file='./env_full_eval'+'/env{}.txt'.format(i)
+        output_file='./env_full5000'+'/env{}.txt'.format(i)
         output_envs(env,output_file)
-        env.render()
-        pygame.image.save(env.window, "pic/env{}.png".format(i))
+        #env.render()
+        #pygame.image.save(env.window, "pic/env{}.png".format(i))
              
     '''
     #输出整个环境的三维向量表示

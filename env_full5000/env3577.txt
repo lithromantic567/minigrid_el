@@ -1,0 +1,319 @@
+{
+    "0": {
+        "pos": [
+            1,
+            6,
+            1,
+            6
+        ],
+        "gates": {
+            "0": {
+                "direction": "right",
+                "pos": 3,
+                "neighbor": 1
+            }
+        },
+        "obstacles": {
+            "0": {
+                "pos": [
+                    3,
+                    3
+                ],
+                "color": "yellow",
+                "shape": "ball"
+            }
+        }
+    },
+    "1": {
+        "pos": [
+            1,
+            6,
+            8,
+            13
+        ],
+        "gates": {
+            "0": {
+                "direction": "right",
+                "pos": 0,
+                "neighbor": 2
+            },
+            "1": {
+                "direction": "left",
+                "pos": 3,
+                "neighbor": 0
+            }
+        },
+        "obstacles": {
+            "0": {
+                "pos": [
+                    2,
+                    0
+                ],
+                "color": "yellow",
+                "shape": "ball"
+            },
+            "1": {
+                "pos": [
+                    0,
+                    0
+                ],
+                "color": "grey",
+                "shape": "key"
+            },
+            "2": {
+                "pos": [
+                    0,
+                    3
+                ],
+                "color": "red",
+                "shape": "key"
+            },
+            "3": {
+                "pos": [
+                    3,
+                    1
+                ],
+                "color": "purple",
+                "shape": "ball"
+            }
+        }
+    },
+    "2": {
+        "pos": [
+            1,
+            6,
+            15,
+            20
+        ],
+        "gates": {
+            "0": {
+                "direction": "left",
+                "pos": 0,
+                "neighbor": 1
+            }
+        },
+        "obstacles": {
+            "0": {
+                "pos": [
+                    2,
+                    5
+                ],
+                "color": "red",
+                "shape": "key"
+            }
+        }
+    },
+    "3": {
+        "pos": [
+            8,
+            13,
+            1,
+            6
+        ],
+        "gates": {
+            "0": {
+                "direction": "up",
+                "pos": 2,
+                "neighbor": 0
+            }
+        },
+        "obstacles": {
+            "0": {
+                "pos": [
+                    2,
+                    3
+                ],
+                "color": "blue",
+                "shape": "ball"
+            },
+            "1": {
+                "pos": [
+                    3,
+                    3
+                ],
+                "color": "purple",
+                "shape": "box"
+            }
+        }
+    },
+    "4": {
+        "pos": [
+            8,
+            13,
+            8,
+            13
+        ],
+        "gates": {
+            "0": {
+                "direction": "right",
+                "pos": 4,
+                "neighbor": 5
+            },
+            "1": {
+                "direction": "up",
+                "pos": 2,
+                "neighbor": 1
+            }
+        },
+        "obstacles": {
+            "0": {
+                "pos": [
+                    2,
+                    4
+                ],
+                "color": "yellow",
+                "shape": "ball"
+            }
+        }
+    },
+    "5": {
+        "pos": [
+            8,
+            13,
+            15,
+            20
+        ],
+        "gates": {
+            "0": {
+                "direction": "left",
+                "pos": 4,
+                "neighbor": 4
+            }
+        },
+        "obstacles": {
+            "0": {
+                "pos": [
+                    1,
+                    4
+                ],
+                "color": "red",
+                "shape": "key"
+            },
+            "1": {
+                "pos": [
+                    0,
+                    4
+                ],
+                "color": "yellow",
+                "shape": "key"
+            }
+        }
+    },
+    "6": {
+        "pos": [
+            15,
+            20,
+            1,
+            6
+        ],
+        "gates": {
+            "0": {
+                "direction": "up",
+                "pos": 3,
+                "neighbor": 3
+            }
+        },
+        "obstacles": {
+            "0": {
+                "pos": [
+                    1,
+                    5
+                ],
+                "color": "grey",
+                "shape": "ball"
+            },
+            "1": {
+                "pos": [
+                    2,
+                    4
+                ],
+                "color": "grey",
+                "shape": "key"
+            }
+        }
+    },
+    "7": {
+        "pos": [
+            15,
+            20,
+            8,
+            13
+        ],
+        "gates": {
+            "0": {
+                "direction": "right",
+                "pos": 1,
+                "neighbor": 8
+            },
+            "1": {
+                "direction": "up",
+                "pos": 0,
+                "neighbor": 4
+            }
+        },
+        "obstacles": {
+            "0": {
+                "pos": [
+                    3,
+                    5
+                ],
+                "color": "red",
+                "shape": "ball"
+            },
+            "1": {
+                "pos": [
+                    0,
+                    0
+                ],
+                "color": "purple",
+                "shape": "box"
+            },
+            "2": {
+                "pos": [
+                    2,
+                    1
+                ],
+                "color": "yellow",
+                "shape": "box"
+            }
+        }
+    },
+    "8": {
+        "pos": [
+            15,
+            20,
+            15,
+            20
+        ],
+        "gates": {
+            "0": {
+                "direction": "left",
+                "pos": 1,
+                "neighbor": 7
+            },
+            "1": {
+                "direction": "up",
+                "pos": 1,
+                "neighbor": 5
+            }
+        },
+        "obstacles": {
+            "0": {
+                "pos": [
+                    5,
+                    3
+                ],
+                "color": "red",
+                "shape": "ball"
+            },
+            "1": {
+                "pos": [
+                    5,
+                    1
+                ],
+                "color": "blue",
+                "shape": "key"
+            }
+        }
+    }
+}

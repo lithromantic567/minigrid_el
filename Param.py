@@ -2,13 +2,18 @@ import torch
 
 
 class Param(object):
+    '''
     obs_feat_in_num = 13
-    obs_feat_in_num_new = 20 #加了属性
     # obs_feat_mid_num = 64
     obs_feat_out_num = 20
     gate_feat_in_num = 4
     # gate_feat_mid_num = 32
     gate_feat_out_num = 20
+    '''
+    obs_feat_in_num = 4
+    obs_feat_out_num = 10
+    gate_feat_in_num = 2
+    gate_feat_out_num = 10
 
     # room_emb_size = obs_feat_out_num + gate_feat_out_num
     voc_emb_size = 20
@@ -20,8 +25,8 @@ class Param(object):
     max_sent_len = 5
     # env_dir = "/home_data/yh/dataset/EnvVersion1/res_files"
     # eval_env_dir = "/home_data/yh/dataset/EnvVersion1/eval_res_files"
-    env_dir = "./env_full"
-    eval_env_dir = "./env_full_eval"
+    env_dir = "./env_full5000"
+    eval_env_dir = "./env_eval100"
     #eval_newenv_dir = "./env_generation/env03/eval_newenv_files"#new_env(4,4)
     #eval_newenv2_dir = "./env_generation/env03/eval_newenv2_files"#(5,5)
     #eval_newenv4_dir = "./env_generation/env03/eval_newenv4_files"#(8,8)
@@ -31,13 +36,13 @@ class Param(object):
     model_dir = "./models"
     sent_dir = "./sents"
 
-    batch_size = 10
+    batch_size = 20
     # batch_size = 10
     epoch = 40000
     # max_obj_num = 8
     max_room_num = 9
     max_obs_num = 8
-    max_gate_num = max_room_num-1
+    max_gate_num = 4
     reward = 5
     # NOTE reward for the final goal
     # final_reward = 20
@@ -46,6 +51,7 @@ class Param(object):
     # lr_B = 0.001
     lr_task = 0.001
     # TODO
+    #room_emb_size_in = obs_feat_in_num * max_obs_num + gate_feat_in_num * max_gate_num
     room_emb_size_in = obs_feat_out_num * max_obs_num + gate_feat_out_num * max_gate_num
     # room_emb_size = obs_feat_out_num * max_obs_num + gate_feat_out_num * max_gate_num
     room_emb_size = 50

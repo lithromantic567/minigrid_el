@@ -58,7 +58,6 @@ class RoomEmbedding(nn.Module):
         #     room_emb = self.env_graph.cal_node_emb(env_ids, room_emb, route_len)
         #     assert ori_room_emb_shape == room_emb.shape
         return room_emb
-
     def _avg_emb(self, emb):
         res = torch.mean(emb, dim=2)
         return res
@@ -66,6 +65,45 @@ class RoomEmbedding(nn.Module):
     def _LSTM_emb(self, room_info):
         # TODO
         raise NotImplementedError
+'''
+class RoomEmbedding(nn.Module):
+    def __init__(self):
+        super(RoomEmbedding, self).__init__()
+        self.fcnn_room = nn.Sequential(
+            nn.Linear(Param.room_emb_size_in, Param.room_emb_size)
+        )
+        self.fcnn_room.apply(_init_weights)
+        # env_graph -> used for cal node emb with graph structure
+        self.env_graph = EnvGraph()
+
+    def forward(self, obs_info, gate_info, method="cat", env_ids=None, route_len=None):
+        obs_emb = obs_info
+        gate_emb = gate_info
+        if method == "avg":
+            avg_obs_emb = self._avg_emb(obs_emb)
+            avg_gate_emb = self._avg_emb(gate_emb)
+            assert avg_obs_emb.shape == (Param.batch_size, Param.max_room_num, Param.obs_feat_in_num)
+            assert avg_gate_emb.shape == (Param.batch_size, Param.max_room_num, Param.gate_feat_in_num)
+            #沿着第三维拼接
+            room_emb = torch.cat((avg_obs_emb, avg_gate_emb), dim=2)
+            room_emb = self.fcnn_room(room_emb)
+        elif method == "cat":
+            cat_obs_emb = obs_emb.reshape((Param.batch_size, Param.max_room_num, Param.max_obs_num * Param.obs_feat_in_num))
+            cat_gate_emb = gate_emb.reshape((Param.batch_size, Param.max_room_num, Param.max_gate_num * Param.gate_feat_in_num))
+            room_emb = torch.cat((cat_obs_emb, cat_gate_emb), dim=2)
+            # NOTE add another fcnn layer
+            room_emb = self.fcnn_room(room_emb)
+        else:
+            print("there is no method called {}".format(method))
+            raise NameError
+        # NOTE mask for now
+        # if env_ids is not None:
+        #     ori_room_emb_shape = room_emb.shape
+        #     room_emb = self.env_graph.cal_node_emb(env_ids, room_emb, route_len)
+        #     assert ori_room_emb_shape == room_emb.shape
+        return room_emb
+'''
+
 
 
 class GateEmbedding(nn.Module):

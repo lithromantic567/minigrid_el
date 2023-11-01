@@ -1,0 +1,11 @@
+训练集扩大到5000
+增加了网络层数
+object的编码从one-hot改成[shape,color,up/down,left/right]
+    obs_feat_in_num = 4
+    obs_feat_out_num = 10
+    gate_feat_in_num = 2
+    gate_feat_out_num = 10
+max_gate_num = 4
+batch=20
+
+

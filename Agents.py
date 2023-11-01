@@ -17,6 +17,8 @@ class ELG(nn.Module):
         #序贯模型
         self.emb2idx = nn.Sequential(
             nn.Linear(Param.room_emb_size, Param.voc_size),
+            nn.ReLU(),
+            nn.Linear(Param.voc_size,Param.voc_size),
             nn.Softmax()
         )
 
